@@ -54,7 +54,7 @@ function Hero() {
       })
       .filter(Boolean)
       .join(", ");
-  }, [genres, movie?.genre_ids]);
+  }, [genres, movie]);
   // --- (End of hooks) ---
 
   // --- ✅ 2. THIS IS THE NEW LOADING LOGIC ---

@@ -1,0 +1,61 @@
+/* src/components/MovieCardSkeleton.css */
+
+/* 1. Base Skeleton "Shimmer" Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* 2. The "Skeleton" Class */
+/* This creates the animated gradient */
+.skeleton {
+  background-color: #3f3f46; /* 'surface-hover' - base color */
+  background-image: linear-gradient(
+    to right,
+    #3f3f46 0%,
+    #4b5563 20%,
+    /* A slightly lighter gray (zinc-600) */ #3f3f46 40%,
+    #3f3f46 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 100%; /* Make the gradient wide */
+  animation: shimmer 1.5s linear infinite; /* Apply the animation */
+  border-radius: 6px;
+}
+
+/* 3. The Skeleton Card Container */
+/* This MUST match the size of the *real* .movie-card */
+.movie-card-skeleton {
+  width: 200px;
+  flex-shrink: 0;
+  background-color: #27272a; /* 'surface' */
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box; /* Include padding in the width */
+}
+
+/* 4. The Skeleton Poster Shape */
+/* Match .movie-card-poster height */
+.skeleton-poster {
+  width: 100%;
+  height: 300px;
+}
+
+/* 5. The Skeleton Text Shapes */
+/* Match .movie-card-info padding and content */
+.skeleton-info {
+  padding: 1rem;
+}
+.skeleton-title {
+  width: 90%;
+  height: 20px;
+  margin-bottom: 0.5rem;
+}
+.skeleton-meta {
+  width: 60%;
+  height: 16px;
+}

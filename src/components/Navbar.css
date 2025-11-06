@@ -1,0 +1,29 @@
+.navbar_container {
+  background-color: #27272a;
+  padding: 1rem 0;
+  border-bottom: 1px solid #3f3f46;
+}
+
+.navbar_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  color: #f59e0b;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.navbar_links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f4f4f5;
+}

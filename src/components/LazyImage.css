@@ -1,0 +1,40 @@
+/* src/components/LazyImage.css */
+
+/* 1. The Placeholder Div */
+.lazy-image-placeholder {
+  /* This MUST match the height/width of your real image */
+  /* Our .movie-card-poster is height: 300px */
+  height: 300px;
+  width: 100%; /* Take the width of the parent */
+
+  /* A subtle background to show *something* is loading */
+  background-color: #3f3f46; /* 'surface-hover' */
+
+  /* A simple shimmer/pulse animation */
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 2. The Real Image (Fade-in effect) */
+.lazy-image-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* 3. Keyframe Animations */
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

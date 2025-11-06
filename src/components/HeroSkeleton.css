@@ -1,0 +1,96 @@
+/* src/components/HeroSkeleton.css */
+
+/* 1. Base Skeleton "Shimmer" Animation (Copied from MovieCardSkeleton.css) */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* 2. The "Skeleton" Class (Copied from MovieCardSkeleton.css) */
+.skeleton {
+  background-color: #3f3f46;
+  background-image: linear-gradient(
+    to right,
+    #3f3f46 0%,
+    #4b5563 20%,
+    #3f3f46 40%,
+    #3f3f46 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: 6px;
+}
+
+/* 3. The Skeleton Hero Container */
+/* This MUST match the size of the *real* .hero-container */
+.hero-skeleton-container {
+  width: 100%;
+  height: 65vh;
+  min-height: 400px;
+  background-color: #18181b;
+  position: relative;
+}
+
+/* 4. The Overlay (to hold the content) */
+.hero-skeleton-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* This matches the real Hero.js layout */
+  display: flex;
+  align-items: flex-end;
+}
+
+/* 5. The Content Holder (matches Hero.js) */
+.hero-skeleton-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 3rem;
+  width: 100%; /* Ensures it fills the .container */
+}
+
+/* 6. Shapes for the Skeleton Content */
+.skeleton-title-hero {
+  width: 60%; /* 60% of the content width */
+  height: 48px; /* Matches 3rem font size */
+  margin-bottom: 0.5rem;
+}
+
+.skeleton-text-hero {
+  width: 80%;
+  height: 16px; /* Matches 1rem text */
+}
+
+.skeleton-text-hero-short {
+  width: 70%;
+  height: 16px;
+}
+
+.skeleton-meta-hero {
+  width: 40%;
+  height: 20px;
+  margin-top: 1rem;
+}
+
+.hero-skeleton-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.skeleton-button {
+  width: 150px;
+  height: 48px; /* Matches our .hero-btn padding */
+  border-radius: 6px;
+}

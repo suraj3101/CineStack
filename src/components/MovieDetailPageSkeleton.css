@@ -1,0 +1,67 @@
+/* src/components/MovieDetailPageSkeleton.css */
+
+/* 1. Base Skeleton "Shimmer" Animation */
+/* We can copy this from MovieCardSkeleton.css */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* 2. The "Skeleton" Base Class */
+/* This creates the animated gradient */
+.skeleton {
+  background-color: #3f3f46; /* 'surface-hover' (zinc-700) - base color */
+  background-image: linear-gradient(
+    to right,
+    #3f3f46 0%,
+    #4b5563 20%,
+    /* A slightly lighter gray (zinc-600) */ #3f3f46 40%,
+    #3f3f46 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 100%;
+  animation: shimmer 1.5s linear infinite;
+  border-radius: 6px;
+}
+
+/* 3. Skeleton Backdrop */
+/* This MUST match the real .detail-hero-container height */
+.skeleton-backdrop {
+  width: 100%;
+  height: 40vh; /* Matches our 40vh height */
+  min-height: 300px;
+  background-color: #27272a; /* 'surface' color (zinc-800) */
+}
+
+/* 4. Skeleton Main Content Area */
+/* This MUST match the real .detail-content-area layout */
+.detail-content-area-skeleton {
+  display: flex;
+  gap: 2.5rem; /* 40px */
+  margin-top: -150px; /* Overlaps the backdrop */
+  position: relative;
+  z-index: 2;
+  /* We use the global .container class for max-width/padding */
+}
+
+/* 5. Skeleton Poster (Left) */
+/* This MUST match the real .detail-poster width/height */
+.skeleton-poster-detail {
+  width: 300px;
+  height: 450px; /* This is the 1.5 aspect ratio of a 300px-wide poster */
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid #3f3f46;
+}
+
+/* 6. Skeleton Info (Right) */
+/* This just fills the remaining space with a shimmer */
+.skeleton-info-detail {
+  width: 100%;
+  height: 450px; /* Match the poster height for a clean look */
+  border-radius: 8px;
+}

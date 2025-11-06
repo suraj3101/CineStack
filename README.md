@@ -1,6 +1,6 @@
 # CineStack 🍿
 
-**[➡️ Click here for the Live Demo!](https://your-vercel-or-netlify-link-will-go-here.com)**
+**[➡️ Click here for the Live Demo!](https://cinestack-project.netlify.app/)**
 
 CineStack is a data-driven, responsive movie dashboard and watchlist application built with React. It uses the TMDb API for real-time data and features a persistent watchlist saved to `localStorage`.
 

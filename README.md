@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# CineStack 🍿
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**[➡️ Click here for the Live Demo!](https://your-vercel-or-netlify-link-will-go-here.com)**
 
-## Available Scripts
+CineStack is a data-driven, responsive movie dashboard and watchlist application built with React. It uses the TMDb API for real-time data and features a persistent watchlist saved to `localStorage`.
 
-In the project directory, you can run:
+This project was built to master modern, professional frontend concepts including advanced React hooks, data fetching with React Query, and performance optimization.
 
-### `npm start`
+![CineStack Screenshot](https://image-of-your-app-screenshot-will-go-here.png)
+_(Tip: Once your app is live, take a screenshot, add it to your project folder in a new `public/images` folder, push it, and update this link!)_
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Core Features
 
-### `npm test`
+- **Real-Time Data:** Fetches real-time movie data (Now Playing, Top Rated, Trending) from the **TMDb API**.
+- **Dynamic Data Fetching:** Uses **React Query (`useQuery`)** for all server state, including automatic caching, request de-duplication (e.g., for the global genre list), and built-in loading/error states.
+- **Persistent Global State:** A global **Watchlist** system built with **React Context (`useContext` + `useState`)** and **`localStorage`** to ensure the user's saved movies persist across page refreshes.
+- **Component-Based Routing:** Uses **React Router (`react-router-dom`)** for seamless client-side navigation between the Dashboard, Movie Detail, and Watchlist pages.
+- **Advanced Data Transformation:** Uses the **`useMemo`** hook to perform expensive, client-side calculations (mapping genre IDs to names) only when necessary, preventing wasted re-renders.
+- **"Prefetch-on-Hover" Trailer Modal:** A high-performance "wow" feature. The "Play Trailer" button _pre-fetches_ video data on mouse hover (`queryClient.prefetchQuery`) and opens a modal with an embedded player that appears to load instantly.
+- **Performant Lazy Loading:** Uses the **`IntersectionObserver` API** in a custom `<LazyImage />` component to lazy-load movie posters, preventing 60+ image requests on initial page load and dramatically improving performance.
+- **Shimmering Skeleton Loaders:** Implements a professional loading experience with CSS-based "shimmer" skeletons to prevent Cumulative Layout Shift (CLS) while data is being fetched.
+- **Client-Side Filtering:** The Watchlist page uses `useMemo` to _instantly_ filter the user's saved movies by genre on the client side.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Core:** React.js, React Router, React Query
+- **Hooks:** `useState`, `useEffect`, `useContext`, `useMemo`, `useRef`, `useParams`
+- **API & Data:** Axios, TMDb API (REST)
+- **Styling:** Plain CSS3 (with Flexbox & Grid)
+- **Bundler:** Create React App (react-scripts)
+- **Browser APIs:** `localStorage`, `IntersectionObserver`

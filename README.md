@@ -6,7 +6,7 @@ CineStack is a data-driven, responsive movie dashboard and watchlist application
 
 This project was built to master modern, professional frontend concepts including advanced React hooks, data fetching with React Query, and performance optimization.
 
-![CineStack Screenshot](https://image-of-your-app-screenshot-will-go-here.png)
+![CineStack Screenshot](./public/images/cinestack-screenshot.png)
 _(Tip: Once your app is live, take a screenshot, add it to your project folder in a new `public/images` folder, push it, and update this link!)_
 
 ---
